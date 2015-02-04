@@ -7,6 +7,8 @@ def get_at_content(dna, sig_fig=2):
     lower_dna = dna
     #makes the lowercase DNA into Uppercase DNA
     upper_dna = lower_dna.upper()
+    #removes the nucleotide variable N 
+    fixed_dna = upper_dna.replace('N', '')
     #gets the length of the DNA
     length = len(upper_dna)
     #counts the amount of 'A''s 
@@ -26,3 +28,6 @@ print str(my_at_content)
 print get_at_content('ATGGGGGGGGGGCGCGCGCGAATATAT',5)
 
 print get_at_content('accccccatataagggatata',5)
+
+
+print get_at_content('ATGCGGGGNNNNCCCAATANNNN',5)
