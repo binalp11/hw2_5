@@ -1,20 +1,28 @@
 #! /bin/bash
 from __future__ import division
 
-def get_at_content(dna):
+#defines a function to retrive the AT content
+def get_at_content(dna, sig_fig=2):
+    #sets a variable to hold the dna
     lower_dna = dna
+    #makes the lowercase DNA into Uppercase DNA
     upper_dna = lower_dna.upper()
+    #gets the length of the DNA
     length = len(upper_dna)
+    #counts the amount of 'A''s 
     a_count = upper_dna.count('A')
+    #counts the amount of 'A''s 
     t_count = upper_dna.count('T')
+    #calculates the AT content
     at_content = (a_count + t_count) / length
-    return at_content
+    #returns the value, rounds it at defined significant figures, if not specificied, automatically set at 2 sig figs
+    return round(at_content, sig_fig)
 
 
 
-my_at_content = get_at_content('ATGCGCGCTAGATATGGGGG')
+my_at_content = get_at_content('ATGCGCGCTAGATATGGGGG',5)
 print str(my_at_content)
 
-print get_at_content('ATGGGGGGGGGGCGCGCGCGAATATAT')
+print get_at_content('ATGGGGGGGGGGCGCGCGCGAATATAT',5)
 
-print get_at_content('accccccatataagggatata')
+print get_at_content('accccccatataagggatata',5)
