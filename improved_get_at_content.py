@@ -10,11 +10,11 @@ def get_at_content(dna, sig_fig=2):
     #removes the nucleotide variable N 
     fixed_dna = upper_dna.replace('N', '')
     #gets the length of the DNA
-    length = len(upper_dna)
+    length = len(fixed_dna)
     #counts the amount of 'A''s 
-    a_count = upper_dna.count('A')
+    a_count = fixed_dna.count('A')
     #counts the amount of 'A''s 
-    t_count = upper_dna.count('T')
+    t_count = fixed_dna.count('T')
     #calculates the AT content
     at_content = (a_count + t_count) / length
     #returns the value, rounds it at defined significant figures, if not specificied, automatically set at 2 sig figs
